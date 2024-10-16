@@ -9,6 +9,10 @@ public class TestController {
    
 	@GetMapping("/login")
 	public String login() {
-		return "Index";
+		return "login";
+	}
+	@GetMapping("/index")
+	public String index(){
+		return "index";
 	}
 }

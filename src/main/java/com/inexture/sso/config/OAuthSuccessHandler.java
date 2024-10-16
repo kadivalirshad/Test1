@@ -23,7 +23,7 @@ public class OAuthSuccessHandler implements AuthenticationSuccessHandler {
 //	@Override
 //	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
 //			AuthenticationException exception) throws IOException, ServletException {
-//		
+//
 //		System.err.println(exception.getLocalizedMessage());
 //	}
 
@@ -34,11 +34,10 @@ public class OAuthSuccessHandler implements AuthenticationSuccessHandler {
 		DefaultOAuth2User userAuth = (DefaultOAuth2User) authentication.getPrincipal();
 		OAuth2AuthenticationToken authentictionToken = (OAuth2AuthenticationToken) authentication;
 		String authorizationId = authentictionToken.getAuthorizedClientRegistrationId();
-		String email = null;
-		String name = null;
-		
+		String name = userAuth.getAttribute("firstname");
 
-		response.sendRedirect("/login");
+
+		response.sendRedirect("/index");
 	}
 
 }

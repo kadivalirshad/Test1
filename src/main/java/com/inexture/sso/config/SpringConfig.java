@@ -34,7 +34,7 @@ public class SpringConfig {
 	            .oauth2Login(oauth2 -> {oauth2
 	                .loginPage("/login");
 	                oauth2.successHandler(authSuccessHandler);
-	             //   oauth2.failureHandler(authSuccessHandler);
+	                //oauth2.failureHandler(authSuccessHandler);
 	            })
 	            .logout(logout -> logout
 	                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -46,10 +46,10 @@ public class SpringConfig {
 	    }
 	
 	 
-	 @Bean
-		public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-			return configuration.getAuthenticationManager();
-		}
+//	 @Bean
+//		public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+//			return configuration.getAuthenticationManager();
+//		}
 	 
 	 @Bean
 		public WebSecurityCustomizer webSecurityCustomizer() {
